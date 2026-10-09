@@ -1,0 +1,157 @@
+[SYS] 2026/10/09 - 08:58:17 | SQL_DSN not set, using SQLite as database 
+[SYS] 2026/10/09 - 08:58:18 | database migration started 
+[SYS] 2026/10/09 - 08:58:18 | system is not initialized and no root user exists 
+[SYS] 2026/10/09 - 08:58:18 | REDIS_CONN_STRING not set, Redis is not enabled 
+[SYS] 2026/10/09 - 08:58:18 | i18n initialized with languages: zh-CN, zh-TW, en 
+[SYS] 2026/10/09 - 08:58:18 | Loaded 0 custom OAuth providers 
+[SYS] 2026/10/09 - 08:58:18 | New API v0.0.0 started 
+2026/10/09 08:58:19 WARNING: TRUSTED_PROXIES is unset or blank; trusting loopback, RFC 1918, and IPv6 ULA proxy addresses for compatibility. Set TRUSTED_PROXIES=none to trust no proxies, or configure explicit proxy IPs/CIDRs to replace these defaults.
+[INFO] 2026/10/09 - 08:58:19 | SYSTEM | codex credential auto-refresh task started: tick=10m0s threshold=24h0m0s 
+[SYS] 2026/10/09 - 08:58:19 | 正在更新数据看板数据... 
+[INFO] 2026/10/09 - 08:58:19 | SYSTEM | subscription quota reset task started: tick=1m0s 
+[INFO] 2026/10/09 - 08:58:19 | SYSTEM | system task runner started: runner=liushh-WsBQe33l idle_interval=15s 
+[SYS] 2026/10/09 - 08:58:19 | 保存数据看板数据成功，共保存0条数据 
+
+  [33mWarning: Refresh cookie is not secure and refresh/logout Origin validation is disabled. Please set SESSION_COOKIE_SECURE=true in production.[0m
+
+
+  [32mNew API v0.0.0[0m  ready in 1630 ms
+
+  ➜  [1mLocal:[0m   http://localhost:3000/
+  ➜  [1mNetwork:[0m http://10.1.2.176:3000/
+  ➜  [1mNetwork:[0m http://172.28.208.1:3000/
+  ➜  [1mNetwork:[0m http://172.26.224.1:3000/
+  ➜  [1mNetwork:[0m http://172.20.10.7:3000/
+
+[GIN] 2026/10/09 - 08:58:35 | web | 202610090058352035904008268d9d6xLup3Cnr | 200 |            0s |             ::1 |     GET /
+[GIN] 2026/10/09 - 08:58:35 | api | 202610090058358989312008268d9d6Xp5g4B7I | 200 |       727.3µs |             ::1 |     GET /api/status
+[SYS] 2026/10/09 - 08:59:19 | syncing options from database 
+
+2026/10/09 08:59:20 [32mD:/code/bailian/new-api/service/authz/adapter.go:24 [33mSLOW SQL >= 200ms
+[0m[31;1m[1412.019ms] [33m[rows:3][35m SELECT * FROM `casbin_rule` ORDER BY id asc[0m
+
+2026/10/09 08:59:20 [32mD:/code/bailian/new-api/model/system_task.go:423 [33mSLOW SQL >= 200ms
+[0m[31;1m[1431.515ms] [33m[rows:0][35m SELECT * FROM `system_task_locks` WHERE locked_until < ?[0m
+
+2026/10/09 08:59:20 [32mD:/code/bailian/new-api/model/option.go:29 [33mSLOW SQL >= 200ms
+[0m[31;1m[1450.447ms] [33m[rows:2][35m SELECT * FROM `options`[0m
+
+2026/10/09 08:59:20 [32mD:/code/bailian/new-api/model/task_plugin.go:192 [33mSLOW SQL >= 200ms
+[0m[31;1m[1453.800ms] [33m[rows:0][35m SELECT `task_plugins`.`id`,`task_plugins`.`key`,`task_plugins`.`api_version`,`task_plugins`.`version`,`task_plugins`.`source_hash`,`task_plugins`.`enabled`,`task_plugins`.`active`,`task_plugins`.`created_at`,`task_plugins`.`remark` FROM `task_plugins` WHERE `task_plugins`.`active` = ? ORDER BY `key`,`version`,`id`[0m
+
+2026/10/09 08:59:20 [32mD:/code/bailian/new-api/model/db_time.go:14 [33mSLOW SQL >= 200ms
+[0m[31;1m[1446.545ms] [33m[rows:1][35m SELECT strftime('%s','now')[0m
+
+2026/10/09 08:59:20 [32mD:/code/bailian/new-api/model/system_instance.go:69 [33mSLOW SQL >= 200ms
+[0m[31;1m[1452.667ms] [33m[rows:1][35m INSERT INTO `system_instances` (`node_name`,`info`,`started_at`,`last_seen_at`,`created_at`,`updated_at`) VALUES (?,?,?,?,?,?) ON CONFLICT (`node_name`) DO UPDATE SET `info`=`excluded`.`info`,`started_at`=`excluded`.`started_at`,`last_seen_at`=`excluded`.`last_seen_at`,`updated_at`=`excluded`.`updated_at`[0m
+[GIN] 2026/10/09 - 09:00:16 | api | 202610090100168904310008268d9d62QQXCDBk | 200 |      1.0212ms |             ::1 |     GET /api/status
+[GIN] 2026/10/09 - 09:00:17 | api | 202610090100176691313008268d9d6nzvkm0sl | 200 |       592.8µs |             ::1 |     GET /api/status
+[SYS] 2026/10/09 - 09:00:20 | syncing options from database 
+[GIN] 2026/10/09 - 09:00:45 | api | 202610090100450479031008268d9d6z2wzLbUw | 200 |      1.0047ms |             ::1 |     GET /api/status
+[GIN] 2026/10/09 - 09:00:47 | api | 202610090100476215273008268d9d6CVs1Jl8a | 200 |    143.5389ms |             ::1 |     GET /api/status
+[GIN] 2026/10/09 - 09:00:47 | api | 202610090100476286114008268d9d6kUmvMxYd | 200 |     150.848ms |             ::1 |     GET /api/setup?t=1791507647441
+[GIN] 2026/10/09 - 09:00:47 | api | 202610090100478203481008268d9d62SiKBkXe | 200 |            0s |             ::1 |     GET /api/setup?t=1791507647792
+[GIN] 2026/10/09 - 09:00:47 | api | 202610090100479275732008268d9d6VBzQQ6GD | 200 |      1.0218ms |             ::1 |     GET /api/setup?t=1791507647890
+[GIN] 2026/10/09 - 09:00:49 | api | 202610090100495957372008268d9d6I4WPvrq0 | 200 |       512.8µs |             ::1 |     GET /api/setup
+[GIN] 2026/10/09 - 09:01:14 | api | 202610090101141499061008268d9d6n5WFBFBF | 200 |      2.8807ms |             ::1 |     GET /api/status
+[GIN] 2026/10/09 - 09:01:14 | api | 202610090101141639344008268d9d6Yf7wKzDV | 200 |      1.1533ms |             ::1 |     GET /api/setup?t=1791507673934
+[GIN] 2026/10/09 - 09:01:14 | api | 202610090101141930406008268d9d6BABXaU87 | 200 |      1.8588ms |             ::1 |     GET /api/setup?t=1791507674185
+[GIN] 2026/10/09 - 09:01:14 | api | 202610090101144734552008268d9d6Jszj07uj | 200 |       930.1µs |             ::1 |     GET /api/setup?t=1791507674389
+[SYS] 2026/10/09 - 09:01:20 | syncing options from database 
+[SYS] 2026/10/09 - 09:02:20 | syncing options from database 
+[GIN] 2026/10/09 - 09:02:59 | api | 202610090102591877283008268d9d6gWqb2Sc5 | 200 |    106.4877ms |             ::1 |    POST /api/setup
+[GIN] 2026/10/09 - 09:02:59 | api | 202610090102593109640008268d9d6Jjc0AZEG | 200 |      1.4086ms |             ::1 |     GET /api/setup?t=1791507779300
+[GIN] 2026/10/09 - 09:02:59 | api | 202610090102593937873008268d9d6pkshOM3Q | 200 |         700µs |             ::1 |     GET /api/setup?t=1791507779339
+[GIN] 2026/10/09 - 09:02:59 | api | 202610090102595175356008268d9d6XL7AD523 | 200 |      1.6802ms |             ::1 |     GET /api/notice
+[GIN] 2026/10/09 - 09:02:59 | api | 202610090102595198058008268d9d6WipBM5W8 | 200 |       584.6µs |             ::1 |     GET /api/home_page_content
+[SYS] 2026/10/09 - 09:03:19 | 正在更新数据看板数据... 
+[SYS] 2026/10/09 - 09:03:19 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2026/10/09 - 09:03:20 | syncing options from database 
+[GIN] 2026/10/09 - 09:03:35 | api | 202610090103354911036008268d9d6GiipYg5f | 401 |      2.0986ms |             ::1 |    POST /api/user/auth/refresh
+[GIN] 2026/10/09 - 09:03:37 | api | 202610090103372520230008268d9d6nmVYFUHT | 200 |      98.937ms |             ::1 |    POST /api/user/login?turnstile=
+[GIN] 2026/10/09 - 09:03:37 | api | 202610090103374095719008268d9d6996O0nVy | 200 |      1.6262ms |             ::1 |     GET /api/status
+[GIN] 2026/10/09 - 09:03:37 | api | 202610090103376329824008268d9d6C1r1suIN | 304 |       938.4µs |             ::1 |     GET /api/notice
+[GIN] 2026/10/09 - 09:03:37 | api | 202610090103376395571008268d9d62sa7KUP1 | 200 |      2.6993ms |             ::1 |     GET /api/uptime/status
+[GIN] 2026/10/09 - 09:03:37 | api | 202610090103376422564008268d9d6mSh5LfYr | 200 |     26.1629ms |             ::1 |     GET /api/data/self?start_timestamp=1791425017&end_timestamp=1791511417&default_time=hour
+[GIN] 2026/10/09 - 09:03:37 | api | 202610090103377163734008268d9d688m4QE6w | 200 |      3.9465ms |             ::1 |     GET /api/user/models
+[GIN] 2026/10/09 - 09:03:37 | api | 202610090103377098713008268d9d6txeeEymR | 200 |     12.7328ms |             ::1 |     GET /api/token/?p=1&size=10
+[GIN] 2026/10/09 - 09:03:37 | api | 202610090103377155749008268d9d6rluviaqE | 200 |      66.624ms |             ::1 |     GET /api/perf-metrics/summary?hours=24
+[GIN] 2026/10/09 - 09:03:49 | api | 202610090103491361568008268d9d6O8vv471N | 200 |     10.4218ms |             ::1 |     GET /api/group/
+[GIN] 2026/10/09 - 09:03:49 | api | 202610090103491391072008268d9d6ODRLdZsO | 200 |      9.0094ms |             ::1 |     GET /api/channel/ops
+[GIN] 2026/10/09 - 09:03:49 | api | 202610090103492084668008268d9d6SifVhBWG | 200 |     12.3613ms |             ::1 |     GET /api/channel/?tag_mode=false&id_sort=false&p=1&page_size=20
+[GIN] 2026/10/09 - 09:03:51 | api | 202610090103510415373008268d9d6WRHwIoiU | 200 |     11.8588ms |             ::1 |     GET /api/vendors/?page_size=1000
+[GIN] 2026/10/09 - 09:03:51 | api | 202610090103510430453008268d9d6hBzWo0bK | 200 |     11.8694ms |             ::1 |     GET /api/models/?include_channel_models=true&p=1&page_size=20
+[GIN] 2026/10/09 - 09:03:52 | api | 202610090103521454147008268d9d6IPAv0PoY | 200 |       7.513ms |             ::1 |     GET /api/authz/catalog
+[GIN] 2026/10/09 - 09:03:52 | api | 202610090103521466761008268d9d6NqG03cR3 | 200 |      8.1451ms |             ::1 |     GET /api/user/?p=1&page_size=20
+[GIN] 2026/10/09 - 09:03:53 | api | 202610090103538272588008268d9d6QXS3J2Ij | 200 |      6.2513ms |             ::1 |     GET /api/subscription/admin/plans
+[GIN] 2026/10/09 - 09:03:53 | api | 202610090103538302334008268d9d68JeAEMgM | 200 |     10.3748ms |             ::1 |     GET /api/option/
+[GIN] 2026/10/09 - 09:03:56 | api | 202610090103564347571008268d9d60cUlsLgv | 200 |       2.042ms |             ::1 |     GET /api/system-info/instances
+[GIN] 2026/10/09 - 09:03:56 | api | 202610090103564362891008268d9d6lggc8E5S | 200 |      8.0286ms |             ::1 |     GET /api/system-task/list?limit=100&scope=active
+[GIN] 2026/10/09 - 09:03:56 | api | 202610090103564367991008268d9d6MXBwxc5f | 200 |      8.6469ms |             ::1 |     GET /api/system-task/list?limit=20&type=&status=&scope=history&offset=0
+[GIN] 2026/10/09 - 09:03:56 | api | 202610090103565460742008268d9d6jEvlGodb | 200 |      2.9356ms |             ::1 |     GET /api/system-task/list?limit=20&type=&status=&scope=history&offset=0
+[GIN] 2026/10/09 - 09:04:00 | api | 202610090104009366597008268d9d6mmbrxmbo | 200 |       4.628ms |             ::1 |     GET /api/option/
+[GIN] 2026/10/09 - 09:04:00 | api | 202610090104009361230008268d9d6ucV7Kpkm | 200 |     14.6878ms |             ::1 |     GET /api/plugin/task
+[GIN] 2026/10/09 - 09:04:07 | api | 202610090104077943940008268d9d6N6mrepTi | 200 |      2.5221ms |             ::1 |     GET /api/plugin/task/marketplace/sources
+[SYS] 2026/10/09 - 09:04:20 | syncing options from database 
+[GIN] 2026/10/09 - 09:04:40 | api | 202610090104407884379008268d9d6e1NjobEZ | 200 |      2.9593ms |             ::1 |     GET /api/plugin/task
+[GIN] 2026/10/09 - 09:04:43 | api | 202610090104438059396008268d9d6Ve7YBka2 | 200 |      1.0681ms |             ::1 |     GET /api/subscription/admin/plans
+[GIN] 2026/10/09 - 09:04:45 | api | 202610090104453590969008268d9d6fLUiF2DS | 200 |      4.5422ms |             ::1 |     GET /api/redemption/?p=1&page_size=20
+[GIN] 2026/10/09 - 09:04:47 | api | 202610090104474800315008268d9d68armTmSR | 200 |      1.7386ms |             ::1 |     GET /api/vendors/?page_size=1000
+[GIN] 2026/10/09 - 09:04:47 | api | 202610090104474844622008268d9d6YnBNTOWr | 200 |      3.0608ms |             ::1 |     GET /api/models/?include_channel_models=true&p=1&page_size=20
+[GIN] 2026/10/09 - 09:04:49 | api | 202610090104495480703008268d9d6NobNYv4J | 200 |      1.5324ms |             ::1 |     GET /api/group/
+[GIN] 2026/10/09 - 09:04:49 | api | 202610090104495779856008268d9d6HN1SAr9d | 200 |      3.6086ms |             ::1 |     GET /api/channel/?tag_mode=false&id_sort=false&p=1&page_size=20
+[GIN] 2026/10/09 - 09:04:51 | api | 202610090104518377387008268d9d6iDTkyJkM | 200 |      1.9563ms |             ::1 |     GET /api/audit?p=1&page_size=20
+[GIN] 2026/10/09 - 09:04:54 | api | 202610090104543166106008268d9d6yKowN1FN | 200 |      1.1222ms |             ::1 |     GET /api/subscription/admin/plans
+[GIN] 2026/10/09 - 09:04:54 | api | 202610090104543160993008268d9d6DYmUdElY | 200 |      2.1991ms |             ::1 |     GET /api/log/stat?p=1&page_size=1&start_timestamp=1791475200&end_timestamp=1791511494
+[GIN] 2026/10/09 - 09:04:54 | api | 202610090104543415136008268d9d652Wy7AY6 | 200 |      2.6144ms |             ::1 |     GET /api/log/?p=1&page_size=100&start_timestamp=1791475200&end_timestamp=1791511494
+[GIN] 2026/10/09 - 09:04:55 | api | 202610090104558072605008268d9d6yUGhJgJb | 200 |      1.1988ms |             ::1 |     GET /api/token/?p=1&size=20
+[GIN] 2026/10/09 - 09:04:55 | api | 202610090104558067505008268d9d65yamTqSq | 200 |      2.3808ms |             ::1 |     GET /api/user/self/groups
+[GIN] 2026/10/09 - 09:05:05 | api | 202610090105050188178008268d9d6wL6qfWPn | 200 |      1.5285ms |             ::1 |     GET /api/uptime/status
+[GIN] 2026/10/09 - 09:05:05 | api | 202610090105050169474008268d9d6BXhfI118 | 200 |      4.9707ms |             ::1 |     GET /api/data/self?start_timestamp=1791425104&end_timestamp=1791511504&default_time=hour
+[GIN] 2026/10/09 - 09:05:05 | api | 202610090105050224417008268d9d6rNemvYFd | 200 |      4.7594ms |             ::1 |     GET /api/token/?p=1&size=10
+[GIN] 2026/10/09 - 09:05:05 | api | 202610090105050143977008268d9d6LRHzjME7 | 200 |     19.9848ms |             ::1 |     GET /api/perf-metrics/summary?hours=24
+[GIN] 2026/10/09 - 09:05:17 | api | 202610090105172327068008268d9d6L7SzcE80 | 200 |      4.9926ms |             ::1 |     GET /api/pricing
+[SYS] 2026/10/09 - 09:05:20 | syncing options from database 
+[GIN] 2026/10/09 - 09:05:40 | api | 202610090105402542876008268d9d6Ppkvw64h | 200 |      1.5829ms |             ::1 |     GET /api/data/self?start_timestamp=1791425140&end_timestamp=1791511540&default_time=hour
+[GIN] 2026/10/09 - 09:05:40 | api | 202610090105402563841008268d9d6Mcw3TkUv | 200 |            0s |             ::1 |     GET /api/uptime/status
+[GIN] 2026/10/09 - 09:05:54 | api | 202610090105549442340008268d9d6mKXXcv27 | 200 |      6.7798ms |             ::1 |     GET /api/audit?p=1&page_size=20
+[GIN] 2026/10/09 - 09:05:55 | api | 202610090105559030032008268d9d6r61aylyW | 200 |      1.1373ms |             ::1 |     GET /api/log/stat?p=1&page_size=1&start_timestamp=1791475200&end_timestamp=1791511555
+[GIN] 2026/10/09 - 09:05:55 | api | 202610090105559073358008268d9d6egBNUctL | 200 |       514.4µs |             ::1 |     GET /api/group/
+[GIN] 2026/10/09 - 09:05:55 | api | 202610090105559101313008268d9d6g063srSl | 200 |      1.1418ms |             ::1 |     GET /api/subscription/admin/plans
+[GIN] 2026/10/09 - 09:05:55 | api | 202610090105559301941008268d9d6xn16Iulk | 200 |      1.1203ms |             ::1 |     GET /api/log/?p=1&page_size=100&start_timestamp=1791475200&end_timestamp=1791511555
+[GIN] 2026/10/09 - 09:06:11 | api | 202610090106114871881008268d9d6nGAHv53y | 200 |      1.6165ms |             ::1 |     GET /api/user/?p=1&page_size=20
+[GIN] 2026/10/09 - 09:06:13 | api | 202610090106134121002008268d9d6JOENDsSA | 200 |       1.526ms |             ::1 |     GET /api/vendors/?page_size=1000
+[GIN] 2026/10/09 - 09:06:13 | api | 202610090106134147277008268d9d6Qmzp5yAt | 200 |      5.1053ms |             ::1 |     GET /api/models/?include_channel_models=true&p=1&page_size=20
+[GIN] 2026/10/09 - 09:06:14 | api | 202610090106145863446008268d9d6dfyTqs7m | 200 |       583.9µs |             ::1 |     GET /api/group/
+[GIN] 2026/10/09 - 09:06:14 | api | 202610090106146197630008268d9d66fRohwVE | 200 |      1.5948ms |             ::1 |     GET /api/channel/?tag_mode=false&id_sort=false&p=1&page_size=20
+[GIN] 2026/10/09 - 09:06:16 | api | 202610090106164295442008268d9d6xMFayApj | 200 |       1.039ms |             ::1 |     GET /api/system-info/instances
+[GIN] 2026/10/09 - 09:06:16 | api | 202610090106164311297008268d9d6Z9ROihhH | 200 |      1.0872ms |             ::1 |     GET /api/system-task/list?limit=100&scope=active
+[GIN] 2026/10/09 - 09:06:16 | api | 202610090106164300540008268d9d6VcmzsLZw | 200 |      5.7586ms |             ::1 |     GET /api/system-task/list?limit=20&type=&status=&scope=history&offset=0
+[GIN] 2026/10/09 - 09:06:16 | api | 202610090106164817282008268d9d6Ny2syFkA | 200 |      2.3035ms |             ::1 |     GET /api/system-task/list?limit=20&type=&status=&scope=history&offset=0
+[GIN] 2026/10/09 - 09:06:17 | api | 202610090106177571510008268d9d6U90Lyq4o | 200 |      2.2351ms |             ::1 |     GET /api/option/
+[GIN] 2026/10/09 - 09:06:17 | api | 202610090106177562892008268d9d6Y2GYNxK2 | 200 |      4.6218ms |             ::1 |     GET /api/plugin/task
+[SYS] 2026/10/09 - 09:06:20 | syncing options from database 
+[GIN] 2026/10/09 - 09:06:21 | api | 202610090106218371787008268d9d6Nanl8l1r | 200 |      1.0742ms |             ::1 |     GET /api/data/self?start_timestamp=1791425181&end_timestamp=1791511581&default_time=hour
+[GIN] 2026/10/09 - 09:06:21 | api | 202610090106218382529008268d9d6EKdYjtK6 | 200 |         698µs |             ::1 |     GET /api/uptime/status
+[GIN] 2026/10/09 - 09:06:21 | api | 202610090106218376941008268d9d6bhopPKlS | 200 |      1.2568ms |             ::1 |     GET /api/perf-metrics/summary?hours=24
+[GIN] 2026/10/09 - 09:06:21 | api | 202610090106218420748008268d9d6nXY0gsns | 200 |      1.0694ms |             ::1 |     GET /api/token/?p=1&size=10
+[SYS] 2026/10/09 - 09:07:20 | syncing options from database 
+[GIN] 2026/10/09 - 09:07:39 | api | 202610090107393337621008268d9d6br8xsoAc | 200 |        1.12ms |             ::1 |     GET /api/perf-metrics/summary?hours=24
+[GIN] 2026/10/09 - 09:07:39 | api | 202610090107393600743008268d9d6PIVRH4q6 | 200 |      2.7969ms |             ::1 |     GET /api/data/?start_timestamp=1791421581&end_timestamp=1791507981&default_time=hour
+[GIN] 2026/10/09 - 09:07:47 | api | 202610090107473204706008268d9d6mTsV1DHt | 200 |      1.6859ms |             ::1 |     GET /api/status
+[GIN] 2026/10/09 - 09:07:47 | api | 202610090107473580799008268d9d63a3BaWtw | 200 |            0s |             ::1 |     GET /api/setup?t=1791508067339
+[GIN] 2026/10/09 - 09:07:47 | api | 202610090107473845712008268d9d6IzPYNYDm | 200 |      7.5461ms |             ::1 |    POST /api/user/auth/refresh
+[GIN] 2026/10/09 - 09:07:47 | api | 202610090107476462176008268d9d674hHPNhV | 304 |            0s |             ::1 |     GET /api/notice
+[GIN] 2026/10/09 - 09:07:48 | api | 202610090107485502879008268d9d6sdYYNbYo | 200 |      2.1084ms |             ::1 |     GET /api/perf-metrics/summary?hours=24
+[GIN] 2026/10/09 - 09:07:48 | api | 202610090107485898973008268d9d6fpEQlz9P | 200 |      1.7981ms |             ::1 |     GET /api/data/?start_timestamp=1791421667&end_timestamp=1791508067&default_time=hour
+[SYS] 2026/10/09 - 09:08:19 | 正在更新数据看板数据... 
+[SYS] 2026/10/09 - 09:08:19 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2026/10/09 - 09:08:20 | syncing options from database 
+[SYS] 2026/10/09 - 09:09:20 | syncing options from database 
+[SYS] 2026/10/09 - 09:10:20 | syncing options from database 
+[SYS] 2026/10/09 - 09:11:20 | syncing options from database 
+[SYS] 2026/10/09 - 09:12:20 | syncing options from database 
+[SYS] 2026/10/09 - 09:13:19 | 正在更新数据看板数据... 
+[SYS] 2026/10/09 - 09:13:19 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2026/10/09 - 09:13:20 | syncing options from database 
+[SYS] 2026/10/09 - 09:14:20 | syncing options from database 

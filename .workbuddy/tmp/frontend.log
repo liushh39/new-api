@@ -1,0 +1,29 @@
+$ rsbuild dev --host "0.0.0.0" --port "5173"
+Rsbuild v2.1.6
+
+  ➜  Network:  http://49.10.1.7:5173/
+  ➜  Network:  http://10.1.2.176:5173/
+  ➜  Network:  http://172.28.208.1:5173/
+  ➜  Network:  http://172.26.224.1:5173/
+  ➜  Network:  http://169.254.205.217:5173/
+  ➜  Network:  http://172.20.10.7:5173/
+  ➜  Local:    http://localhost:5173/
+
+start   build started...
+ready   built in 54.8s
+start   building build\DevtoolsComponent\SO26Z5QU.js
+ready   built in 3.09s
+start   building router-devtools-core\dist\FloatingTanStackRouterDevtools-CnpwH7La.js
+ready   built in 2.65s
+start   building Bailian\components\Color.js
+ready   built in 1.46s
+start   building Bailian\components\Color.js and 8 more
+ready   built in 1.55s
+start   building components\ui\markdown.tsx
+ready   built in 1.78s
+start   building components\models\log-stat-cards.tsx
+ready   built in 1.37s
+start   building components\models\performance-overview.tsx and 2 more
+ready   built in 3.35s
+start   building vchart\esm\index.js
+ready   built in 1.89s
